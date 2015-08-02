@@ -16,6 +16,6 @@ int main()
 {
     //freopen("in.txt","r",stdin);
     //freopen("out.txt","w",stdout);
-    
+   	cout<<"helloword"<<'\n';
     return 0;
 }
