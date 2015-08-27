@@ -1,4 +1,37 @@
+#include<bits/stdc++.h>
+using namespace std;
 
+struct my_char
+{
+	char s;
+	my_char(char a)
+	{
+		s = a;
+	}
+
+	my_char() {};
+	bool operator < (const my_char &a) const
+	{
+		return a.s < s;
+	}
+};
+
+int main()
+{
+	set<my_char> g;
+	g.insert(my_char('+'));
+	g.insert(my_char('-'));
+	char s[1001];
+
+	while(~scanf("%s", s))
+	{
+		int len = strlen(s);
+		for(int i = 0; i < len; i ++) if(g.find(s[i]))
+			printf("%d",i);
+		printf("\n");
+	}
+	return 0;
+}
 /*
 #include<iostream>
 #include<deque>
