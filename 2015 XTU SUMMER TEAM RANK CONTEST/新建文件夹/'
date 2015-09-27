@@ -1,0 +1,99 @@
+set guifont=Consolas:h14
+
+set nocompatible
+source $VIMRUNTIME/vimrc_example.vim
+source $VIMRUNTIME/mswin.vim
+behave mswin
+
+set nu!
+set tabstop=4
+set shiftwidth=4
+
+set smarttab
+set nobackup
+
+set cindent
+
+colo evening
+
+set showcmd
+
+set mouse=a
+
+map <F9> :call CR()<CR>
+func! CR()
+exec "w"
+exec "!g++ % -o %< -std=c++11 -g -Wall "
+exec "! %<"
+endfunc
+
+imap <c-]> {<cr>}<c-o>O<left><right>
+
+map <C-A> ggVG"+y
+
+
+"inoremap ( ()<LEFT>
+"inoremap [ []<LEFT>
+"inoremap { {}<LEFT>
+"inoremap " ""<LEFT>
+"inoremap ' ''<LEFT>
+
+
+map <F2> :call SetTitle()<CR>
+func SetTitle()
+let l = 0
+let l = l + 1 | call setline(l,'/* ***********************************************')
+let l = l + 1 | call setline(l,'Author        :Ilovezilian')
+let l = l + 1 | call setline(l,'Created Time  :'.strftime('%c'))
+let l = l + 1 | call setline(l,'File Name     :'.expand('%'))
+let l = l + 1 | call setline(l,'************************************************ */')
+let l = l + 1 | call setline(l,'')
+
+let l = l + 1 | call setline(l,'#include <cstdio>')
+let l = l + 1 | call setline(l,'#include <cstring>')
+let l = l + 1 | call setline(l,'#include <iostream>')
+let l = l + 1 | call setline(l,'#include <algorithm>')
+let l = l + 1 | call setline(l,'#include <vector>')
+let l = l + 1 | call setline(l,'#include <queue>')
+let l = l + 1 | call setline(l,'#include <set>')
+let l = l + 1 | call setline(l,'#include <map>')
+let l = l + 1 | call setline(l,'#include <string>')
+let l = l + 1 | call setline(l,'#include <cmath>')
+let l = l + 1 | call setline(l,'#include <cstdlib>')
+let l = l + 1 | call setline(l,'#include <ctime>')
+let l = l + 1 | call setline(l,'#define INF 0x7fffffff')
+let l = l + 1 | call setline(l,'using namespace std;')
+let l = l + 1 | call setline(l,'const int N = 0, mod = 1e9+7;')
+let l = l + 1 | call setline(l,'')
+let l = l + 1 | call setline(l,'int main()')
+let l = l + 1 | call setline(l,'{')
+let l = l + 1 | call setline(l,'    //freopen("","r",stdin);')
+let l = l + 1 | call setline(l,'    //freopen("","w",stdout);')
+let l = l + 1 | call setline(l,'    ')
+let l = l + 1 | call setline(l,'    return 0;')
+let l = l + 1 | call setline(l,'}')
+endfunc
+
+map <F3> :call SetFist()<CR>
+func SetFist()
+let l = 0
+let l = l + 1 | call setline(l,'/* ***********************************************')
+let l = l + 1 | call setline(l,'Author        :Ilovezilian')
+let l = l + 1 | call setline(l,'Created Time  :'.strftime('%c'))
+let l = l + 1 | call setline(l,'File Name     :'.expand('%'))
+let l = l + 1 | call setline(l,'************************************************ */')
+let l = l + 1 | call setline(l,'')
+
+let l = l + 1 | call setline(l,'#include <bits/stdc++.h>')
+let l = l + 1 | call setline(l,'#define INF 0x7fffffff')
+let l = l + 1 | call setline(l,'using namespace std;')
+let l = l + 1 | call setline(l,'const int N = 0, mod = 1e9+7;')
+let l = l + 1 | call setline(l,'')
+let l = l + 1 | call setline(l,'int main()')
+let l = l + 1 | call setline(l,'{')
+let l = l + 1 | call setline(l,'    //freopen("","r",stdin);')
+let l = l + 1 | call setline(l,'    //freopen("","w",stdout);')
+let l = l + 1 | call setline(l,'    ')
+let l = l + 1 | call setline(l,'    return 0;')
+let l = l + 1 | call setline(l,'}')
+endfunc
